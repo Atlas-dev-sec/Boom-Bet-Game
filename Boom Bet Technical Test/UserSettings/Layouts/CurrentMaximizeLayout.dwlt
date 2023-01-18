@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 22297
+  controlID: 1500
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 22298
+  controlID: 1501
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 22299
+  controlID: 1502
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 2c0cffff740cffff100effff160effff5837ffff0e3affff6a3efffff23effffee40ffffcc46ffff4847ffffa448ffffe649ffff624affffe84cffff344effff9650fffffe51ffff5053ffffba54ffff3665fffff466ffff2068ffffc678ffff3084ffff0087ffff0e8cffff3e91ffffbeacffff14beffffc2bfffff46d6ffffa2d8ffff34fbfffffc5a0000bc790000967d000094950000ce950000c09d0000249e00004c9e000034af000098af000082b20000f0b2000046b60000aab600008ebb0000eabb00005cbd000052c00000aec00000a0c200000ec3000076c50000d2c50000c4c700002ad4000090e20000ece20000
+      m_SelectedIDs: 1e970000
+      m_LastClickedID: 38686
+      m_ExpandedIDs: 9cc3ffff9cc4ffffc69600003a970000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -650,22 +650,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/UI Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scripts/UI Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\ALCIDES\Boom Bet Technical Test
+  m_LastProjectPath: C:\Users\ALCIDES\Desktop\BoomBetProject\Boom-Bet-Game\Boom Bet
+    Technical Test
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3c5c0000
-    m_LastClickedID: 23612
-    m_ExpandedIDs: 000000002e5c0000
+    m_SelectedIDs: de970000
+    m_LastClickedID: 38878
+    m_ExpandedIDs: 000000009e960000ac960000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -693,7 +694,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000
+    m_ExpandedIDs: 00000000ac960000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -718,8 +719,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 1e970000
+    m_LastClickedInstanceID: 38686
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -771,7 +772,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 507.2
-    width: 1171.8
+    width: 1163.8
     height: 276.19998
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:

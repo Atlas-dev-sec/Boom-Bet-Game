@@ -14,15 +14,32 @@ public class MainMenu : MonoBehaviour
     private float coinsAmount;
     void Start()
     {
-        coinsValueText.text = PlayerPrefs.GetFloat("totalCoinsAmount").ToString("f1");
-        coinsAmount = PlayerPrefs.GetFloat("totalCoinsAmount");
+        //coinsValueText.text = PlayerPrefs.GetFloat("initialCoinsSupply").ToString("f1");
+        coinsAmount = PlayerPrefs.GetFloat("q");
         //
         userInput.onEndEdit.AddListener(SubmitBet);
-;    }
+    }
+
+    void Update()
+    {
+        //Debug.Log(GameManager.initialCoinsSupply);
+        Debug.Log("Coin amot: "+ coinsAmount);
+    }
+
 
     private void SubmitBet(string arg0)
     {
         totalBetAmount = float.Parse(arg0);
+
+        if(coinsAmount == 0)
+        {
+            PlayerPrefs.SetFloat("q", 250);
+            Debug.Log(totalBetAmount);
+
+            userInput.text = "";
+            userInput.placeholder.GetComponent<Text>().text = "Betting in process Good Luck...";
+            SceneManager.LoadScene("BombBetScene");
+        }
         if(totalBetAmount <= coinsAmount)
         {
             Debug.Log(totalBetAmount);

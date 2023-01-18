@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class BombTimer : MonoBehaviour
 {
-    public static BombTimer instance;
+    //public static BombTimer instance;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI multiplierText;
     public TextMeshProUGUI coinsValueText;
@@ -28,15 +28,18 @@ public class BombTimer : MonoBehaviour
     private bool wasWithdrew;
     public GameManager gameManager;
     public float currentMultiplierValue;
-    private void Awake()
+
+    public float amount;
+    public float coinsWin;
+    /*private void Awake()
     {
         instance = this;
-    }
+    }*/
 
     void Start()
     {
-        //totalCoinsAmount = PlayerPrefs.GetFloat("totalCoinsAmount", 100);
-        coinsValueText.text = GameManager.totalCoinsAmount.ToString("f1");
+        amount = PlayerPrefs.GetFloat("q");
+        coinsValueText.text = amount.ToString("f1");// get float....
         multiplierAmount = 1f;
         multiplierValueIncreasedPerSecond = 0.2f;
         audioSource = GetComponent<AudioSource>();   
@@ -50,6 +53,8 @@ public class BombTimer : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("amount :" + amount);
+        //Debug.Log(InitialSupply.initialCoinsSupply);
         CountTimer();
         timer += Time.deltaTime;
         CheckTimer();
@@ -101,21 +106,23 @@ public class BombTimer : MonoBehaviour
         // win condition...
         if (wasWithdrew)
         {
-            coinsValueText.text = Mathf.Round(GameManager.totalCoinsAmount).ToString("f1");
-            totalWonCoinsText.text =" +" + (bettedAmount * currentMultiplierValue).ToString()+ " coins..";
+            totalWonCoinsText.text =" +" + coinsWin.ToString()+ " coins..";
+            bettedAmount *= currentMultiplierValue; 
+            amount += bettedAmount;
             totalWonCoinsText.enabled = true;
-            PlayerPrefs.SetFloat("totalCoinsAmount", GameManager.totalCoinsAmount);
+            coinsValueText.text = Mathf.Round(amount).ToString("f1");
+            PlayerPrefs.SetFloat("q", amount);
             Debug.Log("coins were withdrew and added to count...");
-            Debug.Log("Total coins are: " + GameManager.totalCoinsAmount);   
+            //Debug.Log("Total coins are: " + GameManager.totalCoinsAmount);   
         }
         // lost condition...
         else 
         {
             totalLostCoinsText.text = " -" + bettedAmount.ToString() + " coins...";
             totalLostCoinsText.enabled = true;
-            GameManager.totalCoinsAmount -= bettedAmount;
-            coinsValueText.text = Mathf.Round(GameManager.totalCoinsAmount).ToString("f1");
-            PlayerPrefs.SetFloat("totalCoinsAmount", GameManager.totalCoinsAmount);
+            amount -= bettedAmount;
+            coinsValueText.text = Mathf.Round(amount).ToString("f1");
+            PlayerPrefs.SetFloat("q", amount);
         }
         
     }
@@ -128,8 +135,9 @@ public class BombTimer : MonoBehaviour
         int decimalPlaces = 1;
         float factor = Mathf.Pow(10.0f, decimalPlaces);
         currentMultiplierValue = Mathf.RoundToInt(multiplierAmount * factor) / factor;
+        coinsWin = bettedAmount * currentMultiplierValue;
         // updates and multiply the total coin amount...
-        GameManager.totalCoinsAmount *= currentMultiplierValue; 
+        
         return wasWithdrew;
         
     }

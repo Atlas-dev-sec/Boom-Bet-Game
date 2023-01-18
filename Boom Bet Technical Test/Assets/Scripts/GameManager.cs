@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
     public bool isGameOver;
     public static float totalCoinsAmount;
+  
     // Start is called before the first frame update
-    private void Awake()
-    {
-        instance = this;
-    }
     void Start()
     {
-        totalCoinsAmount = 100;
-        totalCoinsAmount = PlayerPrefs.GetFloat("totalCoinsAmount", 100);
+        //totalCoinsAmount += initialCoinsSupply;
+        //totalCoinsAmount += initialCoinsSupply;
+        //coinsValueText.text = PlayerPrefs.GetFloat("initialCoinsSupply").ToString("f1");
+        //totalCoinsAmount = PlayerPrefs.GetFloat("initialCoinsSupply", 550);
         isGameOver = false;
     }
 
